@@ -1,4 +1,5 @@
 ## Dagger2在MVP中的应用
+转载说明出处：http://blog.csdn.net/a15286856575/article/details/53405630
 ### 需要基础
 * [Dagger2](http://blog.csdn.net/a15286856575/article/details/53156774)
 * [MVP](http://blog.csdn.net/a15286856575/article/details/52294896)
