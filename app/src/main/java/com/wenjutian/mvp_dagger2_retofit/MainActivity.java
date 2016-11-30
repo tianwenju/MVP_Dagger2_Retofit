@@ -1,6 +1,7 @@
 package com.wenjutian.mvp_dagger2_retofit;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -56,6 +57,7 @@ public class MainActivity extends BaseActiviy<LoginPresenter> implements LoginCo
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.inject(this);
+        login.setVisibility(View.VISIBLE);
     }
 
     @OnClick(R.id.login)

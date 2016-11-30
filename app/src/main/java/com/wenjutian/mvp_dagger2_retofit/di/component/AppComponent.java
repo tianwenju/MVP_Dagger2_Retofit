@@ -10,7 +10,6 @@ import com.wenjutian.mvp_dagger2_retofit.di.module.ServiceModule;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import okhttp3.OkHttpClient;
 
 /**
  * Created by V.Wenju.Tian on 2016/11/22.
@@ -20,8 +19,6 @@ import okhttp3.OkHttpClient;
 public interface AppComponent {
 
     Application Application();
-
-    OkHttpClient okhttpclient();
 
     ApiService  apiService();
 }
