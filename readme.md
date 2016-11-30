@@ -20,11 +20,12 @@
     - 场景1：多个Presenter用了同一个model类，有同样的需求，model需要传入一个对象，我们是不是要找到用了这个model的所有Presenter，一个一个修改。里面是不是有耦合。同样我们可以通过dagger2注入model,在dagger2的module修改这个model就行了。
     - 场景2：初始化一个Model,需要对象A,对象A需要对象B,对象B需要对象C,我们是不是先C c= new B(),B b = new B(c)，A a = new A(B),然后初始化Model。我们在对model进行重用的时候，每次都要这样做很繁琐，通过dagger2中提供的创建的Module，我们可以注入这个model，是不是很省事。
     
+> 注意module是Dagger2中的，model是mvp中的
+> 当然Dagger2不仅仅局限于MVP,在有耦合的地方都可以用。
 
 ---
 
-> 注意module是Dagger2中的，model是mvp中的
-> 当然Dagger2不仅仅局限于MVP,在有耦合的地方都可以用。
+
 ### Dagger2在MVP中的具体实现
 架构思路：对于上面两种情况。他们可以有同一个Module提供，那我们就可以有一套依赖体系实现，例如登录，我们LoginModule提供Presenter和Model,LoginComponent负责注入,就行了。但是我们还需要一个全局的AppModule，提供OkHttpClient ,Sevivce,Retofit。然后让LoginComponent依赖他就行了。那么我们在LoginComponent,就能够拿到所有的Module.如图：
 ![image](http://img.blog.csdn.net/20161129171530893)
